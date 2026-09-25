@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Levera — Lead Generation for Roofing & Solar</title>
+<link rel="icon" href="favii.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1B33;
+    --navy-2:#0F2340;
+    --gold:#F0B93A;
+    --gold-dim:#D9A429;
+    --cream:#F6F1E4;
+    --line: rgba(246,241,228,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  header{
+    position:sticky; top:0; top:env(safe-area-inset-top,0px);
+    background:rgba(11,27,51,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line); z-index:10;
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{display:flex; align-items:center; gap:10px; font-size:19px; font-weight:700; letter-spacing:0.01em;}
+  .brand .mark{
+    width:30px; height:30px; border-radius:50%; background:var(--gold);
+    color:var(--navy); display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:16px; flex:none;
+  }
+  nav a{font-size:14px; color:var(--cream); opacity:0.75; text-decoration:none;}
+  nav a:hover{opacity:1;}
+
+  .hero{padding:96px 0 84px; border-bottom:1px solid var(--line);}
+  .hero .eyebrow{color:var(--gold); font-size:14px; font-weight:500; margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(34px,5vw,54px); font-weight:700; line-height:1.12;
+    max-width:11ch; margin-bottom:22px;
+  }
+  .hero p{font-size:18px; max-width:52ch; opacity:0.82; margin-bottom:32px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:6px; font-weight:600;
+    font-size:15px; text-decoration:none; transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--gold); color:var(--navy);}
+  .btn-ghost{border:1px solid var(--line); color:var(--cream);}
+
+  section{padding:76px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{max-width:56ch; margin-bottom:46px;}
+  .section-head h2{font-size:clamp(24px,3vw,32px); font-weight:700; margin-bottom:12px;}
+  .section-head p{opacity:0.75; font-size:16px;}
+
+  .process{list-style:none; counter-reset:step; display:flex; flex-direction:column; gap:0;}
+  .process li{
+    counter-increment:step; display:grid; grid-template-columns:44px 1fr; gap:20px;
+    padding:26px 0; border-top:1px solid var(--line);
+  }
+  .process li:last-child{border-bottom:1px solid var(--line);}
+  .process li::before{
+    content:counter(step);
+    color:var(--gold); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;
+  }
+  .process .step-body h3{font-size:18px; font-weight:600; margin-bottom:6px;}
+  .process .step-body p{opacity:0.75; font-size:15px; max-width:56ch;}
+
+  .why-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px;}
+  .why-grid div h3{font-size:17px; font-weight:600; margin-bottom:8px; color:var(--gold);}
+  .why-grid div p{font-size:15px; opacity:0.75;}
+
+  .contact{text-align:left;}
+  .contact h2{font-size:clamp(24px,3vw,32px); font-weight:700; margin-bottom:14px; max-width:16ch;}
+  .contact p{opacity:0.8; font-size:16px; max-width:48ch; margin-bottom:28px;}
+  .contact-links{display:flex; flex-direction:column; gap:10px; font-size:16px;}
+  .contact-links a{text-decoration:none; color:var(--gold);}
+  .contact-btn{margin-top:24px;}
+
+  footer{padding:32px 0;}
+  footer .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  footer .brand{font-size:15px;}
+  footer .brand .mark{width:24px; height:24px; font-size:13px;}
+  footer small{opacity:0.5; font-size:13px;}
+
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){ }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="mark">L</span>Levera</div>
+    <nav><a href="#contact">Get in touch</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Lead generation for Roofing & Solar</div>
+    <h1>More booked estimates, without lifting a finger on marketing.</h1>
+    <p>We find homeowners in your area who are ready for a new roof or a solar install, and get them straight to you — so you spend your time closing, not chasing.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Book a free consultation</a>
+      <a class="btn btn-ghost" href="#process">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p>A simple, hands-off process built specifically for roofing and solar companies.</p>
+    </div>
+    <ol class="process">
+      <li>
+        <div class="step-body">
+          <h3>We find your homeowners</h3>
+          <p>We identify homeowners in your service area who match the profile of someone likely to need a roof or solar install soon.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>We reach out for you</h3>
+          <p>Using AI-assisted, personalized outreach, we contact them directly — no cold calling required from your team.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>You get the booked estimate</h3>
+          <p>Interested homeowners land straight in your inbox or calendar, ready for a quote.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why roofing & solar companies work with us</h2>
+    </div>
+    <div class="why-grid">
+      <div>
+        <h3>Fully managed for you</h3>
+        <p>We handle the entire process of finding and reaching homeowners, so nothing lands on your plate but the estimate.</p>
+      </div>
+      <div>
+        <h3>Built for your industry</h3>
+        <p>We only work with roofing and solar businesses, so our approach is tuned to how your customers actually buy.</p>
+      </div>
+      <div>
+        <h3>No Cold Calling</h3>
+        <p>Our AI-powered outreach automatically warms up prospects and books them directly into your schedule, so your team never wastes time chasing dead leads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Ready for more booked estimates?</h2>
+    <p>Tell us about your business and service area, and we'll show you what a pipeline of ready-to-talk homeowners looks like.</p>
+    <div class="contact-links">
+      <a href="mailto:hello.levera@gmail.com">hello.levera@gmail.com</a>
+      <a href="#" target="_blank" rel="noopener">linkedin.com/company/levera</a>
+    </div>
+    <a class="btn btn-primary contact-btn" href="#">Book Your Strategy Session</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="mark">L</span>Levera</div>
+    <small>&copy; 2026 Levera. All rights reserved.</small>
+  </div>
+</footer>
+
+</body>
+</html>
